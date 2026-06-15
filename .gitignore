@@ -6,7 +6,21 @@ __pycache__/
 .env
 
 # =======================================================
-# 2. PRODUCTION ENVIRONMENT (Ignore data and models)
+# 2. CREDENTIALS & SECRETS  ← NOVO
+# =======================================================
+*.json
+!package.json
+!package-lock.json
+credentials/
+*credentials*
+*token*
+*secret*
+service_account*
+.earthengine/
+~/.config/earthengine/
+
+# =======================================================
+# 3. PRODUCTION ENVIRONMENT (Ignore data and models)
 # =======================================================
 Production/Data/
 Production/Models/
@@ -14,7 +28,7 @@ Production/Prediction/
 Production/Sliced_Data/
 
 # =======================================================
-# 3. QUEIMADAS_DATA FOLDER RULES
+# 4. QUEIMADAS_DATA FOLDER RULES
 # =======================================================
 # Ignore ALL loose files in the root of Queimadas_Data (e.g., .tif)
 Queimadas_Data/*
@@ -27,7 +41,7 @@ Queimadas_Data/Models and Diagnosis/
 Queimadas_Data/Prediction/
 
 # =======================================================
-# 4. EXTRA PROTECTION AGAINST HEAVY FILES
+# 5. EXTRA PROTECTION AGAINST HEAVY FILES
 # =======================================================
 *.pt
 *.pth
@@ -37,7 +51,7 @@ Queimadas_Data/Prediction/
 *.xlsx
 
 # =======================================================
-# 5. JUPYTER NOTEBOOKS GUARANTEE
+# 6. JUPYTER NOTEBOOKS GUARANTEE
 # =======================================================
 # This rule ensures no .ipynb is accidentally ignored
 !*.ipynb
