@@ -1,0 +1,43 @@
+# =======================================================
+# 1. SYSTEM CACHES
+# =======================================================
+.ipynb_checkpoints/
+__pycache__/
+.env
+
+# =======================================================
+# 2. PRODUCTION ENVIRONMENT (Ignore data and models)
+# =======================================================
+Production/Data/
+Production/Models/
+Production/Prediction/
+Production/Sliced_Data/
+
+# =======================================================
+# 3. QUEIMADAS_DATA FOLDER RULES
+# =======================================================
+# Ignore ALL loose files in the root of Queimadas_Data (e.g., .tif)
+Queimadas_Data/*
+
+# BUT make an exception to track subfolders (like Shapefiles)
+!Queimadas_Data/*/
+
+# Re-ignore the specific subfolders you prohibited
+Queimadas_Data/Models and Diagnosis/
+Queimadas_Data/Prediction/
+
+# =======================================================
+# 4. EXTRA PROTECTION AGAINST HEAVY FILES
+# =======================================================
+*.pt
+*.pth
+*.h5
+*.tif
+*.csv
+*.xlsx
+
+# =======================================================
+# 5. JUPYTER NOTEBOOKS GUARANTEE
+# =======================================================
+# This rule ensures no .ipynb is accidentally ignored
+!*.ipynb

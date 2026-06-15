@@ -1,0 +1,120 @@
+# 🔥 DeepFireCNN: Wildfire Risk Prediction in Mato Grosso
+
+## 📌 Overview
+DeepFireCNN is an advanced deep learning pipeline designed to predict the spatial probability of wildfires in the state of Mato Grosso, Brazil. By combining historical climate data, satellite imagery, and anthropogenic variables, the model generates highly accurate, multi-horizon fire risk maps (1, 7, 14, and 30 days).
+
+## 🚀 Key Features
+* **Multi-Horizon Forecasts:** Predicts fire probabilities for the next 24 hours, 7 days, 14 days, and 30 days.
+* **Spatio-Temporal Architecture:** Utilizes a Convolutional Neural Network (CNN) with Inception blocks in PyTorch to process both temporal sequences (14-day weather/moisture history) and static spatial maps (topography, vegetation, infrastructure).
+* **Focal Loss & Dynamic Thresholding:** Specifically optimized to handle highly imbalanced datasets (where non-fire pixels vastly outnumber fire pixels), prioritizing high Recall to ensure fires are not missed.
+* **Interactive Visualizations:** Automatically exports ultra-high-resolution (1200 DPI) static panels and interactive HTML web maps using Folium.
+
+## 📊 Data Sources (via Google Earth Engine)
+To accurately model the physical "forming process" of wildfires, the model integrates three layers of data:
+1. **The Fuel (Biosphere):** Land Use/Land Cover (MapBiomas), Vegetation Index (MODIS EVI), and Topography (SRTM DEM, Slope, Aspect).
+2. **The Predisposition (Atmosphere & Hydrology):** Temperature, Precipitation, Vapor Pressure Deficit (ERA5-Land), and Soil Moisture (NASA SMAP L3).
+3. **The Ignition (Anthropogenic):** Euclidean distance to Federal and State highway networks.
+* **Target Variable:** MODIS MOD14A1 (Active Fire Ignitions).
+
+## 🛠️ Tech Stack
+* **Deep Learning:** PyTorch
+* **Geospatial Processing:** Rasterio, GeoPandas, Shapely
+* **Data Extraction:** Google Earth Engine (earthengine-api)
+* **Visualization:** Matplotlib, Folium, Branca
+
+## 📂 Repository Structure
+> **⚠️ Note:** Due to GitHub's size constraints, large datasets, trained model weights (`.pth`), sliced tensors (`.pt`), and raw raster arrays (`.tif`) are excluded from this repository via `.gitignore`. 
+
+* **`Data_Acquisition/`**: Jupyter notebooks connecting to GEE for asynchronous batch exports of environmental raster layers.
+* **`Model_Training/`**: Scripts for temporal data slicing, PyTorch Dataset/DataLoader creation, and the DeepFireCNN training loop.
+* **`Production/Prediction/`**: Inference scripts that execute the forward pass on the latest environmental data patches to generate updated GeoTIFF risk maps and HTML dashboards.
+
+## ✍️ Author
+**Daves de Azevedo Cordova** *Researcher specializing in Geoprocessing, Environmental Modeling, and Deep Learning.*# 🔥 DeepFireCNN: Wildfire Risk Prediction in Mato Grosso
+
+## 📌 Overview
+DeepFireCNN is an advanced deep learning pipeline designed to predict the spatial probability of wildfires in the state of Mato Grosso, Brazil. By combining historical climate data, satellite imagery, and anthropogenic variables, the model generates highly accurate, multi-horizon fire risk maps (1, 7, 14, and 30 days).
+
+## 🚀 Key Features
+* **Multi-Horizon Forecasts:** Predicts fire probabilities for the next 24 hours, 7 days, 14 days, and 30 days.
+* **Spatio-Temporal Architecture:** Utilizes a Convolutional Neural Network (CNN) with Inception blocks in PyTorch to process both temporal sequences (14-day weather/moisture history) and static spatial maps (topography, vegetation, infrastructure).
+* **Focal Loss & Dynamic Thresholding:** Specifically optimized to handle highly imbalanced datasets (where non-fire pixels vastly outnumber fire pixels), prioritizing high Recall to ensure fires are not missed.
+* **Interactive Visualizations:** Automatically exports ultra-high-resolution (1200 DPI) static panels and interactive HTML web maps using Folium.
+
+## 📊 Data Sources (via Google Earth Engine)
+To accurately model the physical "forming process" of wildfires, the model integrates three layers of data:
+1. **The Fuel (Biosphere):** Land Use/Land Cover (MapBiomas), Vegetation Index (MODIS EVI), and Topography (SRTM DEM, Slope, Aspect).
+2. **The Predisposition (Atmosphere & Hydrology):** Temperature, Precipitation, Vapor Pressure Deficit (ERA5-Land), and Soil Moisture (NASA SMAP L3).
+3. **The Ignition (Anthropogenic):** Euclidean distance to Federal and State highway networks.
+* **Target Variable:** MODIS MOD14A1 (Active Fire Ignitions).
+
+## 🛠️ Tech Stack
+* **Deep Learning:** PyTorch
+* **Geospatial Processing:** Rasterio, GeoPandas, Shapely
+* **Data Extraction:** Google Earth Engine (earthengine-api)
+* **Visualization:** Matplotlib, Folium, Branca
+
+## 📂 Repository Structure
+> **⚠️ Note:** Due to GitHub's size constraints, large datasets, trained model weights (`.pth`), sliced tensors (`.pt`), and raw raster arrays (`.tif`) are excluded from this repository via `.gitignore`. 
+
+* **`Data_Acquisition/`**: Jupyter notebooks connecting to GEE for asynchronous batch exports of environmental raster layers.
+* **`Model_Training/`**: Scripts for temporal data slicing, PyTorch Dataset/DataLoader creation, and the DeepFireCNN training loop.
+* **`Production/Prediction/`**: Inference scripts that execute the forward pass on the latest environmental data patches to generate updated GeoTIFF risk maps and HTML dashboards.
+
+## ✍️ Author
+**Daves de Azevedo Cordova** *Researcher specializing in Geoprocessing, Environmental Modeling, and Deep Learning.*
+# 🔥 DeepFireCNN: Wildfire Risk Prediction in Mato Grosso
+
+## 📌 Overview
+DeepFireCNN is an advanced deep learning pipeline designed to predict the spatial probability of wildfires in the state of Mato Grosso, Brazil. By combining historical climate data, satellite imagery, and anthropogenic variables, the model generates highly accurate, multi-horizon fire risk maps (1, 7, 14, and 30 days).
+
+## 🚀 Key Features
+* **Multi-Horizon Forecasts:** Predicts fire probabilities for the next 24 hours, 7 days, 14 days, and 30 days.
+* **Spatio-Temporal Architecture:** Utilizes a Convolutional Neural Network (CNN) with Inception blocks in PyTorch to process both temporal sequences (14-day weather/moisture history) and static spatial maps (topography, vegetation, infrastructure).
+* **Focal Loss & Dynamic Thresholding:** Specifically optimized to handle highly imbalanced datasets (where non-fire pixels vastly outnumber fire pixels), prioritizing high Recall to ensure fires are not missed.
+* **Interactive Visualizations:** Automatically exports ultra-high-resolution (1200 DPI) static panels and interactive HTML web maps using Folium.
+
+## 📊 Data Sources (via Google Earth Engine)
+To accurately model the physical "forming process" of wildfires, the model integrates three layers of data:
+1. **The Fuel (Biosphere):** Land Use/Land Cover (MapBiomas), Vegetation Index (MODIS EVI), and Topography (SRTM DEM, Slope, Aspect).
+2. **The Predisposition (Atmosphere & Hydrology):** Temperature, Precipitation, Vapor Pressure Deficit (ERA5-Land), and Soil Moisture (NASA SMAP L3).
+3. **The Ignition (Anthropogenic):** Euclidean distance to Federal and State highway networks.
+* **Target Variable:** MODIS MOD14A1 (Active Fire Ignitions).
+
+## 🛠️ Tech Stack
+* **Deep Learning:** PyTorch
+* **Geospatial Processing:** Rasterio, GeoPandas, Shapely
+* **Data Extraction:** Google Earth Engine (earthengine-api)
+* **Visualization:*# 🔥 DeepFireCNN: Wildfire Risk Prediction in Mato Grosso
+
+## 📌 Overview
+DeepFireCNN is an advanced deep learning pipeline designed to predict the spatial probability of wildfires in the state of Mato Grosso, Brazil. By combining historical climate data, satellite imagery, and anthropogenic variables, the model generates highly accurate, multi-horizon fire risk maps (1, 7, 14, and 30 days).
+
+## 🚀 Key Features
+* **Multi-Horizon Forecasts:** Predicts fire probabilities for the next 24 hours, 7 days, 14 days, and 30 days.
+* **Spatio-Temporal Architecture:** Utilizes a Convolutional Neural Network (CNN) with Inception blocks in PyTorch to process both temporal sequences (14-day weather/moisture history) and static spatial maps (topography, vegetation, infrastructure).
+* **Focal Loss & Dynamic Thresholding:** Specifically optimized to handle highly imbalanced datasets (where non-fire pixels vastly outnumber fire pixels), prioritizing high Recall to ensure fires are not missed.
+* **Interactive Visualizations:** Automatically exports ultra-high-resolution (1200 DPI) static panels and interactive HTML web maps using Folium.
+
+## 📊 Data Sources (via Google Earth Engine)
+To accurately model the physical "forming process" of wildfires, the model integrates three layers of data:
+1. **The Fuel (Biosphere):** Land Use/Land Cover (MapBiomas), Vegetation Index (MODIS EVI), and Topography (SRTM DEM, Slope, Aspect).
+2. **The Predisposition (Atmosphere & Hydrology):** Temperature, Precipitation, Vapor Pressure Deficit (ERA5-Land), and Soil Moisture (NASA SMAP L3).
+3. **The Ignition (Anthropogenic):** Euclidean distance to Federal and State highway networks.
+* **Target Variable:** MODIS MOD14A1 (Active Fire Ignitions).
+
+## 🛠️ Tech Stack
+* **Deep Learning:** PyTorch
+* **Geospatial Processing:** Rasterio, GeoPandas, Shapely
+* **Data Extraction:** Google Earth Engine (earthengine-api)
+* **Visualization:** Matplotlib, Folium, Branca
+
+## 📂 Repository Structure
+> **⚠️ Note:** Due to GitHub's size constraints, large datasets, trained model weights (`.pth`), sliced tensors (`.pt`), and raw raster arrays (`.tif`) are excluded from this repository via `.gitignore`. 
+
+* **`Data_Acquisition/`**: Jupyter notebooks connecting to GEE for asynchronous batch exports of environmental raster layers.
+* **`Model_Training/`**: Scripts for temporal data slicing, PyTorch Dataset/DataLoader creation, and the DeepFireCNN training loop.
+* **`Production/Prediction/`**: Inference scripts that execute the forward pass on the latest environmental data patches to generate updated GeoTIFF risk maps and HTML dashboards.
+
+## ✍️ Author
+**Daves de Azevedo Cordova** *Researcher specializing in Geoprocessing, Environmental Modeling, and Deep Learning.*
