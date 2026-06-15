@@ -67,7 +67,9 @@ This pipeline utilizes a hybrid **Cloud-to-Local-to-Cloud** architecture. To run
 * **Rclone:** Mounts the Google Drive directly inside the Linux environment using a VFS (Virtual File System) cache to allow PyTorch to read cloud data smoothly.
 * **Windows Subsystem for Linux (WSL / Ubuntu):** The entire Python, PyTorch, and geospatial environment runs natively in Linux on a Windows machine to ensure maximum compatibility and GPU acceleration.
 
-> **⚠️ Rclone Cache Constraint:** Heavy I/O operations (like slicing raw `.tif` files into thousands of `.pt` tensors) must occur on the *physical local SSD*. Writing thousands of tiny files directly to the Rclone mount triggers a Google Drive API rate limit error.
+> **⚠️ Rclone Cache Constraint:** Heavy I/O operations (like slicing raw `.tif` files into thousands of `.pt` tensors) must occur on the *physical local SSD*. Writing thousands of tiny files directly to the Rclone mount triggers a Google Drive API rate limit error. Refer to the [Rclone documentation](https://rclone.org/docs/) for mounting instructions.
+
+> **🌍 Google Earth Engine Project Setup:** This pipeline requires an active **Google Earth Engine (GEE) Cloud Project** to authenticate and run all data extraction scripts. If you do not have one, register and create a project at <https://earthengine.google.com/>. Once your project is created, replace the `project` parameter in the GEE initialization call (`ee.Initialize(project='your-project-id')`) with your own Cloud Project ID before running any notebook.
 
 ---
 
@@ -89,7 +91,51 @@ This pipeline utilizes a hybrid **Cloud-to-Local-to-Cloud** architecture. To run
 
 ---
 
-## ✍️ 7. Authorship & Credits
+## 📚 7. Bibliography
+
+### 7.1 Climatological Theoretical Framework
+
+IPCC. **Climate Change 2023: Synthesis Report.** Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change [Core Writing Team, H. Lee and J. Romero (eds.)]. IPCC, Geneva, Switzerland, 2023. 186 p. Available at: <https://www.ipcc.ch/report/ar6/syr/>. Accessed: June 15, 2026.
+
+---
+
+### 7.2 Remote Sensing and Reanalysis Data (Google Earth Engine)
+
+COPERNICUS. **Sentinel-5P TROPOMI Carbon Monoxide Total Column Typical L3 Product.** European Space Agency (ESA) / Google Earth Engine catalog, 2018. Available at: Earth Engine Data Catalog.
+
+DIDAN, K. **MOD13A2 MODIS/Terra Vegetation Indices 16-Day L3 Global 1km SIN Grid V061.** NASA EOSDIS Land Processes DAAC, 2021. Available at: Earth Engine Data Catalog.
+
+GIGLIO, L.; JUSTICE, C. **MOD14A1 MODIS/Terra Thermal Anomalies/Fire Daily L3 Global 1km SIN Grid V061.** NASA EOSDIS Land Processes DAAC, 2021. Available at: Earth Engine Data Catalog.
+
+MAPBIOMAS. **Collection 9 of the Annual Land Use and Land Cover Maps Series for Brazil.** São Paulo: MapBiomas Project, 2024. Available at: <https://mapbiomas.org/>.
+
+MEIJER, J. R.; HUIJBREGTS, M. A. J.; SCHIPPER, A. M. Global roads inventory project (GRIP) development and application. **Environmental Research Letters**, v. 13, n. 3, p. 034010, 2018. Dataset available on Google Earth Engine (GRIP4: Global Roads Inventory Project).
+
+MUÑOZ SABATER, J. **ERA5-Land daily aggregates from 1950 to present.** Copernicus Climate Change Service (C3S) Data Store, 2019. Available at: Earth Engine Data Catalog.
+
+O'NEILL, P. E. et al. **SMAP L3 Radar/Radiometer Global Daily 9 km EASE-Grid Soil Moisture, Version 6 (SPL3SMP_E).** Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center (NSIDC DAAC), 2021. Available at: Earth Engine Data Catalog.
+
+USGS. **EROS Archive - Digital Elevation - Shuttle Radar Topography Mission (SRTM) 1 Arc-Second Global.** U.S. Geological Survey / Google Earth Engine catalog, 2015. Available at: Earth Engine Data Catalog.
+
+---
+
+### 7.3 Infrastructure and Political Boundary Data (Vector Files / SHP)
+
+BRAZIL. National Department of Transport Infrastructure (DNIT). **National Road System (SNV): Federal Road Network (February/2024).** Version SNV_202410A. Brasília: DNIT, 2024. Available at: <https://www.gov.br/dnit/pt-br/assuntos/atlas-e-mapas/sistema-nacional-de-viacao>.
+
+BRAZILIAN INSTITUTE OF GEOGRAPHY AND STATISTICS (IBGE). **Municipal Boundaries of the State of Mato Grosso: 2022 Demographic Census.** Rio de Janeiro: IBGE, 2022. Available at: <https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/>.
+
+MATO GROSSO. Land Institute of Mato Grosso (INTERMAT) / State Secretariat for Infrastructure and Logistics (SINFRA). **Road System of the State of Mato Grosso: State Highways (MT).** Cuiabá: INTERMAT, 2022. Vector file: INTERMAT_TRA_SISTEMA_VIARIO_L.shp.
+
+---
+
+### 7.4 Machine Learning Reference Literature
+
+GÉRON, Aurélien. **Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow:** Concepts, Tools, and Techniques to Build Intelligent Systems. 2nd ed. Sebastopol: O'Reilly Media, 2019. 856 p.
+
+---
+
+## ✍️ 8. Authorship & Credits
 **DeepFireCNN** was developed as part of ongoing research in territorial intelligence and environmental monitoring at the Federal University of Mato Grosso.
 
 * **Author:** Daves de Azevedo Cordova
